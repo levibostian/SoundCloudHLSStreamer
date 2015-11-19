@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SoundCloudHLSStreamer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,59 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Stream URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fAG-uZ-JSC">
+                                <rect key="frame" x="20" y="285" width="560" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GI3-Er-aaH">
+                                <rect key="frame" x="215" y="370" width="170" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="YmA-Bn-eqT"/>
+                                    <constraint firstAttribute="height" constant="30" id="x2b-G8-96C"/>
+                                </constraints>
+                                <state key="normal" title="Stream It!"/>
+                                <connections>
+                                    <action selector="streamItButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5BL-sR-Sul"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWn-JQ-HPC">
+                                <rect key="frame" x="240" y="419" width="121" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="Gx3-jv-kOx"/>
+                                    <constraint firstAttribute="height" constant="30" id="ui5-2Y-tPc"/>
+                                </constraints>
+                                <state key="normal" title="Jump ahead "/>
+                                <connections>
+                                    <action selector="jumpAheadButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tgm-et-Dai"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YWn-JQ-HPC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RcK-Sx-SUK"/>
+                            <constraint firstAttribute="trailing" secondItem="fAG-uZ-JSC" secondAttribute="trailing" constant="20" id="Slc-e6-8CR"/>
+                            <constraint firstItem="GI3-Er-aaH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="how-YJ-dG1"/>
+                            <constraint firstItem="GI3-Er-aaH" firstAttribute="top" secondItem="fAG-uZ-JSC" secondAttribute="bottom" constant="55" id="jim-0e-6bl"/>
+                            <constraint firstItem="YWn-JQ-HPC" firstAttribute="top" secondItem="GI3-Er-aaH" secondAttribute="bottom" constant="19" id="od6-4A-R7x"/>
+                            <constraint firstItem="fAG-uZ-JSC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="265" id="qGJ-ej-yFQ"/>
+                            <constraint firstItem="fAG-uZ-JSC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="xD5-87-kef"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="jumpAheadButton" destination="YWn-JQ-HPC" id="dIc-Go-dCF"/>
+                        <outlet property="streamItButton" destination="GI3-Er-aaH" id="91b-Fz-6AJ"/>
+                        <outlet property="streamUrlTextField" destination="fAG-uZ-JSC" id="4WE-hK-9Qq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="280" y="312"/>
         </scene>
     </scenes>
 </document>
